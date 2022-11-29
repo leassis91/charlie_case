@@ -179,7 +179,7 @@ def data_overview(df):
     c1, c2 = st.columns((2, 2))
 
     with c1:
-        aux4 = df.groupby('day_of_week')['id'].count().reset_index()
+        aux4 = df.groupby('day_of_week')['id'].count().sort_index().reset_index()
         fig = px.bar(aux4, 
                 x='day_of_week', 
                 y='id',
@@ -190,7 +190,7 @@ def data_overview(df):
 
 
     with c2:
-        aux5 = df.groupby('day_of_week')['receita'].sum().reset_index()
+        aux5 = df.groupby('day_of_week')['receita'].sum().sort_index().reset_index()
         fig = px.bar(aux5, 
                 x='day_of_week',
                 y='receita',
