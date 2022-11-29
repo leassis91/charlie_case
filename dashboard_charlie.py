@@ -197,7 +197,7 @@ def data_overview(df):
 
 
     with c2:
-        aux5 = df3.groupby('day_of_week')['receita'].sum().reset_index()
+        aux5 = df.groupby('day_of_week')['receita'].sum().reset_index()
         aux5['day_of_week'] = aux5['day_of_week'].astype(cat_type)
         aux5 = aux5.sort_values(by='day_of_week')
         fig = px.bar(aux5, 
