@@ -7,4 +7,4 @@
   - Dashboard no Streamlit
 
 
-Foi criado um [dashboard online](https://leassis91-charlie-case-dashboard-charlie-peo0xg.streamlit.app/) afim de permitir o acesso aos dados de qualquer lugar.
+Foi criado um [dashboard online](https://leassis91-charlie-case-dashboard-charlie-peo0xg.streamlit.app/) que pode ser acessado pelo CEO através de um celular ou computador.
