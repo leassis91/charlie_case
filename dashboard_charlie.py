@@ -179,7 +179,14 @@ def data_overview(df):
     c1, c2 = st.columns((2, 2))
 
     with c1:
-        aux4 = df.groupby('day_of_week')['id'].count().sort_index().reset_index()
+        from pandas.api.types import CategoricalDtype
+
+        aux4= df.groupby('day_of_week')['id'].count().reset_index()
+        cats = [ 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
+        cat_type = CategoricalDtype(categories=cats, ordered=True)
+        aux4['day_of_week'] = aux4['day_of_week'].astype(cat_type)
+        aux4 = aux4.sort_values(by='day_of_week')
+
         fig = px.bar(aux4, 
                 x='day_of_week', 
                 y='id',
@@ -190,7 +197,9 @@ def data_overview(df):
 
 
     with c2:
-        aux5 = df.groupby('day_of_week')['receita'].sum().sort_index().reset_index()
+        aux5 = df3.groupby('day_of_week')['receita'].sum().reset_index()
+        aux5['day_of_week'] = aux5['day_of_week'].astype(cat_type)
+        aux5 = aux5.sort_values(by='day_of_week')
         fig = px.bar(aux5, 
                 x='day_of_week',
                 y='receita',
