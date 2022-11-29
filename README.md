@@ -5,3 +5,6 @@
   - Jupyter Notebook
   - Sublime Text
   - Dashboard no Streamlit
+
+
+Foi criado um [dashboard online](https://leassis91-charlie-case-dashboard-charlie-peo0xg.streamlit.app/) afim de permitir o acesso aos dados de qualquer lugar.
